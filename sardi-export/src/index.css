@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuentes: serif elegante para títulos, sans con personalidad para cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+    :root {
+        /* Paleta Taberna El Sardi: granate, crema, carbón */
+        --granate: 355 55% 28%;        /* #7a1f2b */
+        --granate-dark: 355 60% 20%;   /* #5a131c */
+        --granate-light: 355 45% 38%;  /* #9a3340 */
+        --crema: 38 45% 95%;           /* #faf3e8 */
+        --crema-dark: 38 25% 88%;      /* #ebe3d3 */
+        --carbon: 25 15% 12%;          /* #221d18 */
+        --carbon-soft: 25 10% 22%;
+        --dorado: 38 55% 55%;          /* #c89c4b */
+        --verde-musgo: 90 18% 32%;
+
+        --background: var(--crema);
+        --foreground: var(--carbon);
+        --card: 0 0% 100%;
+        --card-foreground: var(--carbon);
+        --popover: 0 0% 100%;
+        --popover-foreground: var(--carbon);
+        --primary: var(--granate);
+        --primary-foreground: var(--crema);
+        --secondary: var(--crema-dark);
+        --secondary-foreground: var(--carbon);
+        --muted: var(--crema-dark);
+        --muted-foreground: 25 10% 35%;
+        --accent: var(--dorado);
+        --accent-foreground: var(--carbon);
+        --destructive: 0 70% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 38 20% 80%;
+        --input: 38 20% 80%;
+        --ring: var(--granate);
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family: 'Inter', -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'kern', 'liga', 'calt';
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+    }
+}
+
+@layer components {
+    .container-narrow {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .container-narrow {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+    }
+
+    .btn-granate {
+        background: hsl(var(--granate));
+        color: hsl(var(--crema));
+        padding: 0.95rem 1.75rem;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        transition: background-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 20px hsl(var(--granate) / 0.25);
+    }
+
+    .btn-granate:hover {
+        background: hsl(var(--granate-dark));
+        transform: translateY(-1px);
+        box-shadow: 0 8px 28px hsl(var(--granate) / 0.4);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: hsl(var(--crema));
+        padding: 0.95rem 1.75rem;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        border: 1px solid hsl(var(--crema) / 0.5);
+        transition: background-color 240ms ease, border-color 240ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        cursor: pointer;
+    }
+
+    .btn-outline:hover {
+        background: hsl(var(--crema) / 0.1);
+        border-color: hsl(var(--crema));
+    }
+
+    .btn-outline-dark {
+        background: transparent;
+        color: hsl(var(--granate));
+        padding: 0.95rem 1.75rem;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        border: 1px solid hsl(var(--granate));
+        transition: all 240ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        cursor: pointer;
+    }
+
+    .btn-outline-dark:hover {
+        background: hsl(var(--granate));
+        color: hsl(var(--crema));
+    }
+
+    .eyebrow {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: hsl(var(--granate));
+    }
+
+    .eyebrow-light {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: hsl(var(--dorado));
+    }
+
+    .section-pad {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    @media (max-width: 768px) {
+        .section-pad {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    .divider-ornament {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: hsl(var(--granate));
+    }
+    .divider-ornament::before,
+    .divider-ornament::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .grain-overlay {
+        position: relative;
+    }
+    .grain-overlay::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        opacity: 0.6;
+        mix-blend-mode: multiply;
+    }
+
+    input, select, textarea {
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+/* Animaciones */
+@keyframes float-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float-in {
+    animation: float-in 900ms ease-out both;
+}

@@ -1,0 +1,4 @@
+/* App wrapper - estilos heredados ya viven en index.css */
+.App {
+    min-height: 100vh;
+}
