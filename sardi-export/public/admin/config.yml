@@ -1,5 +1,5 @@
 backend:
- name: github
+ name: git-gateway
  repo: hupallor-prog/tabernaelsardi
  branch: main
 media_folder: "public/images"
@@ -15,3 +15,4 @@ collections:
          - { label: "Nombre", name: "name", widget: "string" }
          - { label: "Teléfono", name: "phone", widget: "string" }
          - { label: "Dirección", name: "address", widget: "string" }
+site_url: https://tabernaelsardi.vercel.app
