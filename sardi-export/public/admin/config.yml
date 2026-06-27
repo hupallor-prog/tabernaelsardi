@@ -1,5 +1,5 @@
 backend:
- name: github
+ name: git-gateway
  repo: hupallor-prog/tabernaelsardi
  branch: main
 media_folder: "public/images"
