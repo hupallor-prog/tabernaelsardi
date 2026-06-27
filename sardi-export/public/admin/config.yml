@@ -1,0 +1,17 @@
+backend:
+ name: github
+ repo: hupallor-prog/tabernaelsardi
+ branch: main
+media_folder: "public/images"
+public_folder: "/images"
+collections:
+ - name: "general"
+   label: "Contenido del restaurante"
+   files:
+     - file: "src/content/general.json"
+       label: "Datos generales"
+       name: "general"
+       fields:
+         - { label: "Nombre", name: "name", widget: "string" }
+         - { label: "Teléfono", name: "phone", widget: "string" }
+         - { label: "Dirección", name: "address", widget: "string" }
