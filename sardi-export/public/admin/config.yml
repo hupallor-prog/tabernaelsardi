@@ -1,16 +1,16 @@
 backend:
- name: git-gateway
+ name: github
  repo: hupallor-prog/tabernaelsardi
  branch: main
 media_folder: "public/images"
 public_folder: "/images"
 collections:
- - name: "general"
-   label: "Contenido del restaurante"
+ - name: "restaurante"
+   label: "Restaurante"
    files:
-     - file: "src/content/general.json"
-       label: "Datos generales"
-       name: "general"
+     - file: "src/content/data.json"
+       label: "Datos"
+       name: "data"
        fields:
          - { label: "Nombre", name: "name", widget: "string" }
          - { label: "Teléfono", name: "phone", widget: "string" }
